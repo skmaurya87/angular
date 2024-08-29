@@ -1,6 +1,6 @@
 ## How to implements cav-table
 
-```Angular
+```HTML
 <cav-table [value]="microsoftTeamsTableDataArr" [headerRelativePath]="relativePath" 
 (clickButtonEvent)="clickButtonEvent($event)" scrollable="true"
 scrollHeight="calc(100vh - 320px)"></cav-table>
