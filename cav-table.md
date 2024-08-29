@@ -6,7 +6,7 @@
 scrollHeight="calc(100vh - 320px)"></cav-table>
 ````
 
-```Angular
+```TypeScript
  relativePath: string = '';
 
   constructor() { 
