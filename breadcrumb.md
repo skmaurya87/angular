@@ -7,7 +7,7 @@ import { CavNavBarService } from 'src/app/shared/cav-nav-bar/cav-nav-bar.service
 import { BreadcrumbService } from 'src/app/core/breadcrumb/breadcrumb.service';
 ```
 
-```typscript
+```TypeScript
   constructor(
     private cavNavBarService: CavNavBarService,
     private breadcrumb: BreadcrumbService
