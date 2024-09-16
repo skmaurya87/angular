@@ -21,6 +21,13 @@ import { BreadcrumbService } from 'src/app/core/breadcrumb/breadcrumb.service';
   ngOnDestroy() {
     this.cavNavBarService.showBreadCrumb = false
   }
+
+cancleService() {
+    this.breadcrumb.back();
+  }
+
+
+
 ```
 
 ## Add help file in helpConfig.json
