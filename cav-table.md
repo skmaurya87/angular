@@ -7,11 +7,21 @@ scrollHeight="calc(100vh - 320px)"></cav-table>
 ````
 
 ```TypeScript
- relativePath: string = '';
+  relativePath: string = 'user-management/users.json';
+  microsoftTeamsTableDataArr: any[] = [];
 
   constructor() { 
-    this.relativePath = "alert/extensions_configuration.json";
-    this.microsoftTeamsTableDataArr = []
+    this.microsoftTeamsTableDataArr = [
+      {name: 'Joy', email: 'santosh.maurya@cavisson.com', group: 'Admin', modifiedOn: '12/12/2023'},
+      {name: 'Pal', email: 'pal@cavisson.com', group: 'Read Only', modifiedOn: '12/12/2022'},
+      {name: 'Ayush', email: 'ayush@cavisson.com', group: 'Standard', modifiedOn: '12/12/2021'},
+      {name: 'Amit', email: 'amit@cavisson.com', group: 'Write Only', modifiedOn: '12/12/2021'},
+    ];
+  }
+
+
+  clickButtonEvent(event: any) {
+
   }
 
 ```
@@ -22,10 +32,10 @@ scrollHeight="calc(100vh - 320px)"></cav-table>
     "config": {
       "globalFilter": true,
       "toggleFilter": true,
-      "masterCheckbox": true,
-      "rowSelection": true,
-      "allboxChecked": true,
-      "tableName": "Teams Detail"
+      "masterCheckbox": false,
+      "rowSelection": false,
+      "allboxChecked": false,
+      "tableName": "Available Users"
     },
     "tableAction": [
       {
@@ -35,62 +45,66 @@ scrollHeight="calc(100vh - 320px)"></cav-table>
         "action": "add",
         "needRowData": true,
         "disable":false
-      },
-      {
-        "iconType": "icon",
-        "iconClass": "las-edit",
-        "toolTip": "Edit",
-        "action": "edit",
-        "needRowData": true,
-        "disable":false
-      },
-      {
-        "iconType": "icon",
-        "iconClass": "icons8 icons8-trash",
-        "toolTip": "Delete",
-        "action": "deleteRow",
-        "needRowData": true,
-        "disable":false
-        
       }
-    ]
+    ],
+    "rowAction": {
+      "rightAction": [
+        {
+          "iconType": "icon",
+          "iconClass": "icons8 icons8-edit-2",
+          "toolTip": "Edit",
+          "action": "edit",
+          "needRowData": true
+        },
+        {
+          "iconType": "icon",
+          "iconClass": "icons8 icons8-trash",
+          "toolTip": "Edit",
+          "action": "edit",
+          "needRowData": true
+        }
+      ]
+    }
   },
   "headers": [
     {
       "cols": [
         {
-          "label": "Name",
-          "key": "pageName",
+          "label": "Avatar",
+          "key": "avatar",
           "dataKey": true,
-          "type": 0,
-          "width": "20%"
+          "type": 9,
+          "width": "100px"
         },
         {
-          "label": "Webhook URL",
-          "key": "webhookUrl",
-          "type": 1,
-          "width": "70%"
+          "label": "Name",
+          "key": "name",
+          "type": 0
+        },
+        {
+          "label": "Email",
+          "key": "email",
+          "type": 0
+        },
+        {
+          "label": "Group",
+          "key": "group",
+          "type": 0
+        },
+        {
+          "label": "ModifiedOn",
+          "key": "modifiedOn",
+          "type": 0
         },
         {
           "label": "Action",
           "key": "action",
-          "type": 1,
+          "type": 5,
           "width": "10%"
         }
       ]
     }
-  ],
-  "rowAction": {
-    "rightAction": [
-      {
-        "iconType": "icon",
-        "iconClass": "icons8 icons8-edit-2",
-        "toolTip": "Edit",
-        "action": "edit",
-        "needRowData": true
-      }
-    ]
-  }
+  ]
 }
 
 
