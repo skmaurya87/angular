@@ -112,7 +112,7 @@ scrollHeight="calc(100vh - 320px)"></cav-table>
 
 
 ```
-
+## If any column comes icon
 ```json 
 {
           "label": "Action Type",
