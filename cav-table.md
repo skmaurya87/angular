@@ -21,6 +21,9 @@ scrollHeight="calc(100vh - 320px)"></cav-table>
 
 
   clickButtonEvent(event: any) {
+    if (event?.cavEventExt?.actionConfig?.action === "add") {
+      alert('add user');
+     }
 
   }
 
