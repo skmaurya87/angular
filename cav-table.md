@@ -112,3 +112,28 @@ scrollHeight="calc(100vh - 320px)"></cav-table>
 
 
 ```
+
+```json 
+{
+          "label": "Action Type",
+          "key": "actions",
+          "type": 8,
+          "definition": [
+            {
+              "value": "1",
+              "iconCls": "icon icons8 icons8-send-email",
+              "tooltip": "Email"
+            },
+            {
+              "value": "2",
+              "iconCls": "icon icons8 icons8-sms-2",
+              "tooltip": "SMS"
+            },
+            {
+              "value": "4",
+              "iconCls": "cav1 icon snmp-trap",
+              "tooltip": "SNMP Traps"
+            },
+
+
+```
