@@ -149,7 +149,7 @@ scrollHeight="calc(100vh - 320px)"></cav-table>
 
 ```
 
-```Angular
+```TypeScript
    onMenuClick(event: any){
      const clickedOption = event.label;
      if (!this.selectedFunctionMenus.includes(clickedOption)) {
