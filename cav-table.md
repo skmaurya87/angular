@@ -145,11 +145,16 @@ scrollHeight="calc(100vh - 320px)"></cav-table>
 <button  [matMenuTriggerFor]="menu.childMenu" icon="icons8 las-exchange-alt-solid"></button>
 <app-widget-submenu #menu [items]="transactionMenuOptions" (onMenuClick)="onMenuClick($event)" ></app-widget-submenu>
 
+<div class="p-grid p-align-center" *ngIf="selectedFunctionMenus.includes('Average')">Average</div>
+
 ```
 
 ```Angular
-   onMenuClick(event){
-     console.log(event);
+   onMenuClick(event: any){
+     const clickedOption = event.label;
+     if (!this.selectedFunctionMenus.includes(clickedOption)) {
+           this.selectedFunctionMenus.push(clickedOption);
+         }
    }
 ```
 
