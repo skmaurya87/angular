@@ -137,3 +137,19 @@ scrollHeight="calc(100vh - 320px)"></cav-table>
 
 
 ```
+
+##Mat menu 
+
+```HTML
+
+<button  [matMenuTriggerFor]="menu.childMenu" icon="icons8 las-exchange-alt-solid"></button>
+<app-widget-submenu #menu [items]="transactionMenuOptions" (onMenuClick)="onMenuClick($event)" ></app-widget-submenu>
+
+```
+
+```Angular
+   onMenuClick(event){
+     console.log(event);
+   }
+```
+
