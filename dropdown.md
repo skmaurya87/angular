@@ -1,6 +1,6 @@
 ##Typescript Code
 
-```Typscript
+```TypeScript
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { DummyOptions } from '../lower-metric-parametrization/dummy-options';
 
