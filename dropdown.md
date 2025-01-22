@@ -1,9 +1,7 @@
 ##Typescript Code
 
 ```TypeScript
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
-
-
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-cav-query-filter',
@@ -24,6 +22,7 @@ export class CavQueryFilterComponent implements OnInit {
   activeIndex = -1;
   @ViewChild('dropdown') dropdown: ElementRef | undefined;
   @ViewChild('chipInput') chipInput!: ElementRef;
+  @Output() onSelect = new EventEmitter<any>();
 
   @Input() queryFilterObject: { 
     height?: string; 
@@ -31,6 +30,7 @@ export class CavQueryFilterComponent implements OnInit {
     footerVisible?: boolean; 
     itemCountVisible?: boolean; 
   };
+
   dropdownStyles: any = {};
 
 
@@ -75,7 +75,7 @@ export class CavQueryFilterComponent implements OnInit {
         this.columnData.length;
       this.scrollToActiveItem();
     } else if (event.key === 'Enter' && this.activeIndex >= 0) {
-      this.selectItem(this.columnData[this.activeIndex]);
+      this.handleSelect(this.columnData[this.activeIndex]);
     } else if (event.key === 'Escape') {
       this.dropdownOpen = false;
     }
@@ -98,20 +98,26 @@ export class CavQueryFilterComponent implements OnInit {
     }
   }
   
-  
-
-  selectItem(item: { label: string; value: string }) {
+  handleSelect(item: { label: string; value: string }) {
+    const isDuplicate = this.selectedItems.some(
+      (selectedItem) => selectedItem.value === item.value
+    );
+    if (isDuplicate) {
+      alert('Item already selected');
+      return; // Stop further execution if the item is a duplicate
+    }
     this.selectedItems.push(item);
     this.searchText = ''; // Clear the search input
     this.onSearch(); // Update filtered items
-    console.log('Selected item:', item);
+    this.onSelect.emit(this.selectedItems); // Emit the selected item to the parent
   }
 
-  removeSelectedItem(item: { label: string; value: string }) {
+  removeSelectedItem(item: { label: string; value: string; remove?: boolean }) {
     this.selectedItems = this.selectedItems.filter(
       (selected) => selected.value !== item.value
     );
     this.onSearch(); // Update filtered items
+    this.onSelect.emit(this.selectedItems); // Emit the selected item to the parent
   }
 
   adjustDropdownPosition() {
@@ -134,6 +140,7 @@ export class CavQueryFilterComponent implements OnInit {
     }
   }
 }
+
 ```
 ##HTML Code
 
