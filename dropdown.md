@@ -146,7 +146,7 @@ export class CavQueryFilterComponent implements OnInit {
 
 ```HTML
 <div class="query-filer-dropdown">
-    <div class="cav-chip min-width-220 border-all border-3 mrn-1 rounded-tr-4 rounded-br-4" (click)="focusInput()">
+    <div class="cav-chip min-width-220 border-all border-3 mrn-1 rounded-0" (click)="focusInput()">
       <ng-container *ngFor="let selectedItem of selectedItems">
         <span class="chipSet border-1">
           {{ selectedItem.label }}
@@ -165,8 +165,6 @@ export class CavQueryFilterComponent implements OnInit {
         (focus)="openDropdown()"
         (blur)="closeDropdown()"/>
     </div>
-
-
     <div class="dropdown-list border-all border-3 mat-elevation-z2"
     [ngStyle]="dropdownStyles"
     *ngIf="dropdownOpen"
@@ -175,7 +173,7 @@ export class CavQueryFilterComponent implements OnInit {
       <li class="p-grid p-align-center p-justify-between"
         *ngFor="let item of columnData; let i = index" 
         [class.active]="i === activeIndex"
-        (mousedown)="selectItem(item)">
+        (mousedown)="handleSelect(item)">
         <span>{{ item.label }}</span>
         <span class="opc50" *ngIf="queryFilterObject?.itemCountVisible">app/database/user</span>
       </li>
@@ -183,14 +181,12 @@ export class CavQueryFilterComponent implements OnInit {
     <div class="p-grid p-align-center bg-neutral-100" *ngIf="queryFilterObject?.footerVisible">
       <div class="p-col-fixed">Wildcard: <i>service:<span class="text-warning-1200">*</span></i></div>
       <div class="p-col-fixed">Union: <i>service:<span class="text-warning-1200">(</span> <span class="text-warning-1200"> OR</span> service_b<span class="text-warning-1200">)</span>*</i></div>
-      <!-- <div class="p-col">Use: <span class="chipSet border-1">
-        <i class="icons8 icons8-up"></i></span>
-        <span class="chipSet border-1"><i class="icons8 icons8-down"></i></span> to navigate</div>
-      <div class="p-col"><span class="chipSet border-1">enter</span> to update query</div>
-      <div class="p-col"><span class="chipSet border-1">Esc</span> to update close</div> -->
     </div>
     </div>
 </div>
+
+
+    
 ```
 ##CSS
 
