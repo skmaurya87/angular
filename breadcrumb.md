@@ -39,3 +39,47 @@ cancleService() {
        "helpFolder": "netOcean"
    }
 ```
+
+```Typescript
+export class AccessControlManagementComponent implements OnInit {
+  menuItems: MenuItem[];
+  constructor(
+    private cavNavBarService: CavNavBarService,
+    private breadcrumb: BreadcrumbService,
+  ) {
+    this.cavNavBarService.showBreadCrumb = true
+    this.breadcrumb.addNewBreadcrumb({ label: 'User Management', routerLink: '/access-control-management/users' });
+    this.breadcrumb.addNewBreadcrumb({ label: 'User' });
+    this.breadcrumb.handleBreadcrumbClick = this.updateBreadcrumb.bind(this);
+   }
+  
+
+  ngOnInit(): void {
+    this.menuItems = [
+      {label: 'Users', routerLink: './users'},
+      {label: 'Groups', routerLink: './groups'},
+      {label: 'Roles', routerLink: './roles'},
+    ];
+  }
+
+  updateBreadcrumb(mode: string) {
+    this.breadcrumb.removeFrom(1);
+    if (mode === 'Users') {
+      this.breadcrumb.addNewBreadcrumb({ label: 'User' });
+    } else if (mode === 'Groups') {
+      this.breadcrumb.addNewBreadcrumb({ label: 'Groups' });
+    } else if (mode === 'Roles') {
+      this.breadcrumb.addNewBreadcrumb({ label: 'Roles' });
+    } else {
+      this.breadcrumb.addNewBreadcrumb({ label: 'User' });
+    }
+  }
+
+  ngOnDestroy() {
+    this.cavNavBarService.showBreadCrumb = false
+  }
+
+
+}
+
+```
