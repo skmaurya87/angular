@@ -24,7 +24,9 @@ scrollHeight="calc(100vh - 320px)"></cav-table>
     if (event?.cavEventExt?.actionConfig?.action === "add") {
       alert('add user');
      }
-
+    if (event?.cavEventExt?.actionConfig?.action === "clickable" && event?.cavEventExt?.columnClicked?.key === "transaction") {
+      alert('add transaction'); 
+     } // if table any rows column data clicked
   }
 
 ```
