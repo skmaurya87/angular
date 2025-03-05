@@ -30,7 +30,7 @@
   }
 ```
 
-##Click on row first column
+## Click on row first column
 
 ```Typescript
   handleTabularDataClick(event: any) {
@@ -50,7 +50,7 @@
   }
 ```
 
-##Row group json
+## Row group json
 ```json
 {
     "tableConfig": {
