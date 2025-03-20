@@ -33,86 +33,111 @@ scrollHeight="calc(100vh - 320px)"></cav-table>
 
 ```json
 {
-  "tableConfig": {
-    "config": {
-      "globalFilter": true,
-      "toggleFilter": true,
-      "masterCheckbox": false,
-      "rowSelection": false,
-      "allboxChecked": false,
-      "tableName": "Available Users"
-    },
-    "tableAction": [
-      {
-        "iconType": "icon",
-        "iconClass": "icons8 icons8-add",
-        "toolTip": "Add",
-        "action": "add",
-        "needRowData": true,
-        "disable":false
+    "tableConfig": {
+      "config": {
+        "globalFilter": true,
+        "toggleFilter": true,
+        "masterCheckbox": true,
+        "rowSelection": false,
+        "allboxChecked": true,
+        "tableName": ""
+      },
+      "tableAction": [
+      ],
+      "rowAction": {
+        "rightAction": [
+          {
+            "iconType": "icon",
+            "iconClass": "icons8 icons8-edit-2",
+            "toolTip": "Edit",
+            "action": "edit",
+            "needRowData": true
+          }
+        ]
       }
-    ],
-    "rowAction": {
-      "rightAction": [
-        {
-          "iconType": "icon",
-          "iconClass": "icons8 icons8-edit-2",
-          "toolTip": "Edit",
-          "action": "edit",
-          "needRowData": true
-        },
-        {
-          "iconType": "icon",
-          "iconClass": "icons8 icons8-trash",
-          "toolTip": "Edit",
-          "action": "edit",
-          "needRowData": true
-        }
-      ]
-    }
-  },
-  "headers": [
-    {
-      "cols": [
-        {
-          "label": "Avatar",
-          "key": "avatar",
-          "dataKey": true,
-          "type": 9,
-          "width": "100px"
-        },
-        {
-          "label": "Name",
-          "key": "name",
-          "type": 0
-        },
-        {
-          "label": "Email",
-          "key": "email",
-          "type": 0
-        },
-        {
-          "label": "Group",
-          "key": "group",
-          "type": 0
-        },
-        {
-          "label": "ModifiedOn",
-          "key": "modifiedOn",
-          "type": 0
-        },
-        {
-          "label": "Action",
-          "key": "action",
-          "type": 5,
-          "width": "10%"
-        }
-      ]
-    }
-  ]
-}
-
-
+    },
+    "headers": [
+      {
+        "cols": [
+          {
+            "label": "Type",
+            "key": "type",
+            "dataKey": true,
+            "type": 8,
+            "width": "80px",
+            "classes": "text-center",
+            "definition": [
+                {
+                    "value": "1",
+                    "iconCls": "icons8 icons8-futures",
+                    "tooltip": "graph"
+                  },
+                  {
+                    "value": "2",
+                    "iconCls": "icons8 icons8-memories",
+                    "tooltip": "time"
+                  },
+                  {
+                    "value": "3",
+                    "iconCls": "icons8 icons8-final-state",
+                    "tooltip": "tick"
+                  }
+            ]
+          },
+          {
+            "label": "Name",
+            "key": "name",
+            "type": 0
+          },
+          {
+            "label": "Time",
+            "key": "time",
+            "type": 2
+          },
+          {
+            "label": "Target",
+            "key": "target",
+            "type": 1,
+            "format": "dec_2",
+            "suffix": "%"
+          },
+          {
+            "label": "Status",
+            "key": "status",
+            "type": 1,
+            "format": "dec_2",
+            "suffix": "%"
+          },
+          {
+            "label": "Error Budget Left",
+            "key": "errorBudgetLeft",
+            "type": 1,
+             "format": "dec_2",
+             "suffix": "%",
+            "click": true
+          },
+          {
+            "label": "Service Transaction",
+            "key": "serviceTransaction",
+            "type": 0
+          },
+          {
+            "label": "User Journey",
+            "key": "userJourney",
+            "type": 0
+          },
+          {
+            "label": "Action",
+            "key": "action",
+            "type": 5,
+            "width": "100px"
+          }
+        ]
+      }
+    ]
+  }
+  
+  
 ```
 ## If any column comes icon
 ```json 
