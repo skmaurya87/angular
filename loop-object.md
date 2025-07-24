@@ -5,7 +5,7 @@ export interface ConfigureAnonymization {
   category: string;
 }
 
-import { DbConnection, AdditionalSubject, ConfigureAnonymization } from './db-connection.model';
+import {ConfigureAnonymization } from './db-connection.model';
 
 
   anonymizeSettings: ConfigureAnonymization[] = [
