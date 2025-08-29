@@ -7,6 +7,8 @@ scrollHeight="calc(100vh - 320px)"></cav-table>
 ````
 
 ## cav table type
+
+```TypeScript
 STRING = 0,
 NUMBER = 1,
 TIME_STAMP = 2, 
@@ -23,7 +25,7 @@ PROGRESS_BAR = 11,
 STATUS = 12,
 JSON = 13,
 CHECKBOX = 14
-
+```
 
 ```TypeScript
   relativePath: string = 'user-management/users.json';
