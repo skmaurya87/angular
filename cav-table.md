@@ -6,6 +6,25 @@
 scrollHeight="calc(100vh - 320px)"></cav-table>
 ````
 
+## cav table type
+STRING = 0,
+NUMBER = 1,
+TIME_STAMP = 2, 
+DECIMAL = 3,
+ID = 4,
+ACTION = 5,
+// MASTER_CHECKBOX = 6,
+RADIO_BUTTON = 6,
+INPUT_SWITCH = 7,
+ICON_CLS = 8,
+ICON_IMAGE = 9,
+COLOR_PICKER = 10,
+PROGRESS_BAR = 11,
+STATUS = 12,
+JSON = 13,
+CHECKBOX = 14
+
+
 ```TypeScript
   relativePath: string = 'user-management/users.json';
   microsoftTeamsTableDataArr: any[] = [];
