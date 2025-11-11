@@ -124,26 +124,6 @@ app-smart-chip {
 }
 ```
 
-
-## Smart Chip Component Examples
-
----
-
-### 1. Basic Usage with System Chips
-
-```html
-<app-smart-chip
-  [defaultChips]="systemChips"
-  [placeholder]="'Add custom tags...'"
-  (chipsChange)="onChipsChange($event)"
-  (chipAdded)="onChipAdded($event)"
-  (chipRemoved)="onChipRemoved($event)">
-</app-smart-chip>
-<p class="info">
-  System chips (blue) cannot be removed. User chips (light blue) can be removed.
-</p>
-
-
 ## 🔧 Technical Details
 
 ### Dependencies
