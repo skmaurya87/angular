@@ -162,26 +162,6 @@ interface Chip {
 </app-smart-chip>
 ```
 
-### Example 2: Custom Colors via CSS Variables
-
-```scss
-app-smart-chip {
-  // System chip colors
-  --chip-system-bg: #fef3c7;
-  --chip-system-color: #92400e;
-  --chip-system-border: #fde68a;
-  
-  // User chip colors
-  --chip-user-bg: #d1fae5;
-  --chip-user-color: #065f46;
-  --chip-user-border: #a7f3d0;
-  
-  // Container colors
-  --chip-container-bg: #f9fafb;
-  --chip-container-border: #e5e7eb;
-  --chip-container-focus-border: #8b5cf6;
-}
-```
 
 ### Example 3: Programmatically Add Chips
 
@@ -270,78 +250,7 @@ export class FormComponent {
 
 ---
 
-## Styling Customization
 
-### Available CSS Variables
-
-```scss
-:host {
-  // System chip colors
-  --chip-system-bg: #e0e7ff;
-  --chip-system-color: #3730a3;
-  --chip-system-border: #c7d2fe;
-  
-  // User chip colors
-  --chip-user-bg: #dbeafe;
-  --chip-user-color: #1e40af;
-  --chip-user-border: #bfdbfe;
-  
-  // Container
-  --chip-container-bg: #ffffff;
-  --chip-container-border: #d1d5db;
-  --chip-container-focus-border: #3b82f6;
-  
-  // Interactive states
-  --chip-hover-brightness: 0.95;
-  --chip-remove-hover-bg: rgba(0, 0, 0, 0.1);
-  
-  // Spacing
-  --chip-gap: 8px;
-  --chip-padding: 6px 12px;
-  --chip-border-radius: 16px;
-  
-  // Warning colors
-  --warning-bg: #fef3c7;
-  --warning-color: #92400e;
-  --warning-border: #fde68a;
-}
-```
-
-### Theme Examples
-
-#### Dark Theme
-
-```scss
-app-smart-chip {
-  --chip-system-bg: #1e293b;
-  --chip-system-color: #e2e8f0;
-  --chip-system-border: #334155;
-  
-  --chip-user-bg: #0f172a;
-  --chip-user-color: #60a5fa;
-  --chip-user-border: #1e40af;
-  
-  --chip-container-bg: #0f172a;
-  --chip-container-border: #334155;
-  --chip-container-focus-border: #60a5fa;
-}
-```
-
-#### Success Theme
-
-```scss
-app-smart-chip {
-  --chip-system-bg: #f0fdf4;
-  --chip-system-color: #166534;
-  --chip-system-border: #bbf7d0;
-  
-  --chip-user-bg: #dcfce7;
-  --chip-user-color: #15803d;
-  --chip-user-border: #86efac;
-}
-```
-
----
 
 ## Keyboard Shortcuts
 
