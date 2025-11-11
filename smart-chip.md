@@ -188,3 +188,77 @@ For questions or issues, refer to:
 ---
 
 **Component Status**: ✅ Complete and ready to use!
+
+# Example
+```html
+<div class="example-container">
+      <h2>Smart Chip Component Examples</h2>
+      
+      <!-- Example 1: Basic Usage with System Chips -->
+      <div class="example-section">
+        <h3>1. Basic Usage with System Chips</h3>
+        <app-smart-chip
+          [defaultChips]="systemChips"
+          [placeholder]="'Add custom tags...'"
+          (chipsChange)="onChipsChange($event)"
+          (chipAdded)="onChipAdded($event)"
+          (chipRemoved)="onChipRemoved($event)">
+        </app-smart-chip>
+        <p class="info">System chips (blue) cannot be removed. User chips (light blue) can be removed.</p>
+      </div>
+      
+      <!-- Example 2: With Maximum Limit -->
+      <div class="example-section">
+        <h3>2. With Maximum Chip Limit (5 chips max)</h3>
+        <app-smart-chip
+          [defaultChips]="limitedSystemChips"
+          [maxChips]="5"
+          [placeholder]="'Add up to 5 chips total...'"
+          (chipsChange)="onLimitedChipsChange($event)">
+        </app-smart-chip>
+        <p class="info">Try adding more than 5 total chips - you'll see a warning.</p>
+      </div>
+      
+      <!-- Example 3: Allow Duplicates -->
+      <div class="example-section">
+        <h3>3. Allow Duplicate Chips</h3>
+        <app-smart-chip
+          [allowDuplicates]="true"
+          [placeholder]="'Duplicates allowed...'"
+          (chipsChange)="onDuplicatesChipsChange($event)">
+        </app-smart-chip>
+        <p class="info">You can add the same chip multiple times.</p>
+      </div>
+      
+      <!-- Example 4: Custom Colors -->
+      <div class="example-section">
+        <h3>4. Custom Colors via Input</h3>
+        <app-smart-chip
+          [defaultChips]="colorSystemChips"
+          [systemChipColor]="'#f59e0b'"
+          [userChipColor]="'#10b981'"
+          [placeholder]="'Add green chips...'">
+        </app-smart-chip>
+        <p class="info">System chips are orange, user chips are green.</p>
+      </div>
+      
+      <!-- Example 5: Custom Colors via CSS -->
+      <div class="example-section">
+        <h3>5. Custom Colors via CSS Variables</h3>
+        <app-smart-chip
+          class="custom-theme"
+          [defaultChips]="themeSystemChips"
+          [placeholder]="'Add purple chips...'">
+        </app-smart-chip>
+        <p class="info">Colors customized using CSS variables.</p>
+      </div>
+      
+      <!-- Data Display -->
+      <div class="data-section">
+        <h3>Current Chips Data</h3>
+        <pre>{{ allChips | json }}</pre>
+      </div>
+    </div>
+```
+
+
